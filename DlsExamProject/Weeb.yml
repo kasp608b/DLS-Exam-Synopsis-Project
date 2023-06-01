@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authorsapi
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authorsapi
+  template:
+    metadata:
+      labels:
+        app: authorsapi
+    spec:
+      containers:
+      - name: authorsapi
+        image: scupak/authorsapi:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authorsapi
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: authorsapi
+  ports:
+  - port: 80
+    nodePort: 31002
