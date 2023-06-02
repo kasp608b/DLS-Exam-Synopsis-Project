@@ -33,10 +33,16 @@ jobs:
      # - name: Run tests
      #   run: dotnet test ${{ matrix.application }} --no-build --verbosity normal
 
+     # - name: Build Docker image
+      #  working-directory: ./DlsExamProject/AuthorsApi
+     #   run: |
+     #     docker build ./DlsExamProject/${{ matrix.application }} \
+      #      --tag $REGISTRY/${{ matrix.IMAGE_NAME }}:latest
+            
       - name: Build Docker image
         working-directory: ./DlsExamProject/AuthorsApi
         run: |
-          docker build ./DlsExamProject/${{ matrix.application }} \
+          docker build $GITHUB_WORKSPACE/DlsExamProject/AuthorsApi \
             --tag $REGISTRY/${{ matrix.IMAGE_NAME }}:latest
 
       - name: Login to Docker Hub
