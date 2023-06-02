@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApi", "AuthorsApi\AuthorsApi.csproj", "{976D6782-5B05-4006-A12A-9686099FF27E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorsApi", "AuthorsApi\AuthorsApi.csproj", "{976D6782-5B05-4006-A12A-9686099FF27E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes mogodb", "Kubernetes mogodb", "{64EF8648-F9BF-458B-A43C-8FFB0E26EA2B}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes services", "Kubernetes services", "{1B56E005-5C0C-4B36-A1BC-1E3F9C03B235}"
 	ProjectSection(SolutionItems) = preProject
 		authorsapi.yml = authorsapi.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes authormongoDB", "Kubernetes authormongoDB", "{8535A66B-B3D1-4348-8313-5934EA6EC089}"
+	ProjectSection(SolutionItems) = preProject
+		author-mongodb-deployment.yml = author-mongodb-deployment.yml
+		author-mongodb-pvc.yml = author-mongodb-pvc.yml
+		author-mongodb-config.yml = author-mongodb-config.yml
+		author-mongodb-service.yml = author-mongodb-service.yml
 	EndProjectSection
 EndProject
 Global
