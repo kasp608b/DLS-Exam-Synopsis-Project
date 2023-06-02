@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: booksmongodb-config
+data:
+  mongod.conf: |
+    dbPath: /data/books/db
+    logPath: /data/books/log
+    replication:
+      replSetName: books-replica-set
