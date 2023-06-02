@@ -9,6 +9,9 @@ env:
 jobs:
   test-and-push:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./DlsExamProject
     strategy:
       matrix:
         application: [AuthorsApi]
