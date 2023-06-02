@@ -1,4 +1,9 @@
 name: Publish Docker images
+env:
+  PROJECT_TO_REPO_MAP: |
+    {
+      "AuthorsApi": "authors-api-repo"
+    }
 on:
    workflow_dispatch:
    push:
@@ -25,7 +30,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
-          images: my-docker-hub-namespace/my-docker-hub-repository
+          images: scupak/${{ fromJson(env.PROJECT_TO_REPO_MAP)[matrix.project] }}
       
       - name: Build and push Docker image for ${{ matrix.project }}
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
