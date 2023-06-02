@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: book-mongodb-service
+spec:
+  selector:
+    app: book-mongodb
+  ports:
+    - protocol: TCP
+      port: 2800
+      targetPort: 2800
+  type: ClusterIP

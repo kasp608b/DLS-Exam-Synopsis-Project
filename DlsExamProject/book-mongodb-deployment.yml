@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-mongodb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-mongodb
+  template:
+    metadata:
+      labels:
+        app: book-mongodb
+    spec:
+      containers:
+        - name: book-mongodb
+          image: mongo
+          ports:
+            - containerPort: 27018
+          volumeMounts:
+            - name: book-mongodb-storage
+              mountPath: /data/books/db
+            - name: book-mongodb-config
+              mountPath: /etc/mongod.conf
+      volumes:
+        - name: book-mongodb-storage
+          persistentVolumeClaim:
+            claimName: book-mongodb-pvc
+        - name: book-mongodb-config
+          configMap:
+            name: book-mongodb-config
