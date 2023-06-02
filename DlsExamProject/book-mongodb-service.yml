@@ -7,6 +7,6 @@ spec:
     app: book-mongodb
   ports:
     - protocol: TCP
-      port: 27017
-      targetPort: 27017
+      port: 27018
+      targetPort: 27018
   type: ClusterIP

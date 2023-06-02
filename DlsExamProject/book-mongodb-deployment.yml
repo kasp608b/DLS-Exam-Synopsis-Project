@@ -16,7 +16,13 @@ spec:
         - name: book-mongodb
           image: mongo
           ports:
-            - containerPort: 27017
+            - containerPort: 27018
+          command:
+            - "mongod"
+            - "--bind_ip"
+            - "0.0.0.0"
+            - "--port"
+            - "27018"
           volumeMounts:
             - name: book-mongodb-storage
               mountPath: /data/books/db
