@@ -12,7 +12,7 @@
 
         public string Authorid { get; set; }
 
-        public AuthorDto Author { get; set; }
+        public AuthorDto? Author { get; set; }
 
     }
 }
