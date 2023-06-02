@@ -36,10 +36,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes bookmongodb", "K
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes booksmongodb", "Kubernetes booksmongodb", "{FFCE3E54-9ADE-40D5-AF0B-88BB2A07E3F2}"
 	ProjectSection(SolutionItems) = preProject
-		books-mongodb-config.yml = books-mongodb-config.yml
-		books-mongodb-deployment.yml = books-mongodb-deployment.yml
-		books-mongodb-pvc.yml = books-mongodb-pvc.yml
-		books-mongodb-service.yml = books-mongodb-service.yml
+		book-mongodb-config.yml = book-mongodb-config.yml
+		book-mongodb-deployment.yml = book-mongodb-deployment.yml
+		book-mongodb-pvc.yml = book-mongodb-pvc.yml
+		book-mongodb-service.yml = book-mongodb-service.yml
 	EndProjectSection
 EndProject
 Global
