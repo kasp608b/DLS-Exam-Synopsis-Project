@@ -7,7 +7,6 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["BooksApi/BooksApi.csproj", "BooksApi/"]
-COPY ["Common/Common.csproj", "Common/"]
 RUN dotnet restore "BooksApi/BooksApi.csproj"
 COPY . .
 WORKDIR "/src/BooksApi"
