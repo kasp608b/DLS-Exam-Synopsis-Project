@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: authorMongodb-config
+  name: author-mongodb-config
 data:
   mongod.conf: |
     dbPath: /data/authors/db
