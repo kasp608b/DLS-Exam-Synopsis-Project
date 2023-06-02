@@ -21,14 +21,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes services", "Kube
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes authormongoDB", "Kubernetes authormongoDB", "{8535A66B-B3D1-4348-8313-5934EA6EC089}"
 	ProjectSection(SolutionItems) = preProject
+		author-mongodb-config.yml = author-mongodb-config.yml
 		author-mongodb-deployment.yml = author-mongodb-deployment.yml
 		author-mongodb-pvc.yml = author-mongodb-pvc.yml
-		author-mongodb-config.yml = author-mongodb-config.yml
 		author-mongodb-service.yml = author-mongodb-service.yml
 	EndProjectSection
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4422792D-0F93-4275-88A6-4A5B16C0AF4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApi", "BooksApi\BooksApi.csproj", "{889DE8D5-C0E5-451E-A871-34E198FF2E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{4422792D-0F93-4275-88A6-4A5B16C0AF4C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApi", "BooksApi\BooksApi.csproj", "{889DE8D5-C0E5-451E-A871-34E198FF2E12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes bookmongodb", "Kubernetes bookmongodb", "{BD05AA2D-DFB5-41AB-BC93-89FE282BA06E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
