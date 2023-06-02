@@ -2,7 +2,7 @@ name: Publish Docker images
 env:
   PROJECT_TO_REPO_MAP: |
     {
-      "AuthorsApi": "authors-api-repo"
+      "AuthorsApi": "authorsapi"
     }
 on:
    workflow_dispatch:
