@@ -16,7 +16,7 @@ spec:
         - name: book-mongodb
           image: mongo
           ports:
-            - containerPort: 2800
+            - containerPort: 27017
           volumeMounts:
             - name: book-mongodb-storage
               mountPath: /data/books/db
