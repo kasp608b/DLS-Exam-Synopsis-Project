@@ -21,6 +21,7 @@ namespace BooksApi.Controllers
         [HttpGet]
         public async Task<ActionResult<List<BookDto>>> Get()
         {
+            Console.WriteLine("Get books called");
             try
             {
                 var bookList = await _bookService.GetAsync();
