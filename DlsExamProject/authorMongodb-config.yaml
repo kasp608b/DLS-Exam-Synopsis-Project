@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: authorMongodb-config
+data:
+  mongod.conf: |
+    dbPath: /data/authors/db
+    logPath: /data/authors/log
+    replication:
+      replSetName: my-replica-set
