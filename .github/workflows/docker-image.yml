@@ -35,7 +35,7 @@ jobs:
      #   run: dotnet test ${{ matrix.application }} --no-build --verbosity normal
 
       - name: Build Docker image
-        working-directory: ./AuthorsApi
+        working-directory: /AuthorsApi
         run: |
           docker build ${{ matrix.application }} \
             --tag $REGISTRY/${{ matrix.IMAGE_NAME }}:latest
