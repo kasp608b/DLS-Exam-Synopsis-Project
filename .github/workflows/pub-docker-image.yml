@@ -34,6 +34,7 @@ jobs:
         
   push_to_registry:
     name: Push Docker images to Docker Hub
+    needs: test
     runs-on: ubuntu-latest
     strategy:
       matrix:
