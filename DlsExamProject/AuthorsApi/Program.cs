@@ -5,7 +5,7 @@ using Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string bookServiceBaseUrl = "http://booksapi/api/Books";
+string bookServiceBaseUrl = "http://booksapi/api/Books/";
 // Add services to the container.
 builder.Services.Configure<AuthorDatabaseSettings>(
     builder.Configuration.GetSection("AuthorDatabase"));
