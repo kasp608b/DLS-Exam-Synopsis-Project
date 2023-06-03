@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: authorsapi
-        image: scupak/authorsapi:3
+        image: scupak/authorsapi:main-AuthorsApi
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
