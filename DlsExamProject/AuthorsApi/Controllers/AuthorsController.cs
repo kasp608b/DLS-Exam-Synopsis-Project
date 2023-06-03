@@ -104,11 +104,11 @@ namespace AuthorsApi.Controllers
                     return NotFound();
                 }
 
-                var updatedBook = _authorConverter.Convert(updatedAuthorDto);
+                var updatedAuthor = _authorConverter.Convert(updatedAuthorDto);
 
-                updatedBook._id = author._id;
+                updatedAuthor._id = author._id;
 
-                await _authorService.UpdateAsync(id, updatedBook);
+                await _authorService.UpdateAsync(id, updatedAuthor);
 
                 return NoContent();
 
