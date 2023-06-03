@@ -12,11 +12,13 @@ namespace AuthorsApi.Controllers
     {
         private readonly AuthorDatabaseService _authorService;
         private readonly IConverter<Author, AuthorDto> _authorConverter;
+        private readonly BooksServiceGateway _booksServiceGateway;
 
-        public AuthorsController(AuthorDatabaseService authorService, IConverter<Author, AuthorDto> authorConverter)
+        public AuthorsController(AuthorDatabaseService authorService, IConverter<Author, AuthorDto> authorConverter, BooksServiceGateway booksServiceGateway)
         {
             _authorService = authorService;
             _authorConverter = authorConverter;
+            _booksServiceGateway = booksServiceGateway;
         }
 
         // GET: api/Authors
@@ -52,9 +54,16 @@ namespace AuthorsApi.Controllers
                     return NotFound();
                 }
 
-                var bookDto = _authorConverter.Convert(author);
+                var authorDto = _authorConverter.Convert(author);
 
-                return bookDto;
+                var booksByAuthor = await _booksServiceGateway.GetBooksByAuthor(id);
+
+                if (booksByAuthor.Any())
+                {
+                    authorDto.Books = booksByAuthor;
+                }
+
+                return authorDto;
 
             }
             catch (Exception ex)
