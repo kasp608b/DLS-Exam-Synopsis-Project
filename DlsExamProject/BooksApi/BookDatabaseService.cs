@@ -27,6 +27,8 @@ namespace BooksApi
 
         public async Task<Book?> GetAsync(string id) =>
             await _bookCollection.Find(x => x._id == id).FirstOrDefaultAsync();
+        public async Task<List<Book>> GetAsyncByAuthor(string id) =>
+            await _bookCollection.Find(x => x.Authorid == id).ToListAsync();
 
         public async Task<Book> CreateAsync(Book newBook)
         {

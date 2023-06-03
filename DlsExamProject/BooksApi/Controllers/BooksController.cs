@@ -37,6 +37,24 @@ namespace BooksApi.Controllers
 
         }
 
+        // GET: api/Books/GetbooksByAuthor/{authorid}
+        [HttpGet("GetbooksByAuthor/{id}")]
+        public async Task<ActionResult<List<BookDto>>> GetBooksByAuthor(string AuthorId)
+        {
+            try
+            {
+                var bookList = await _bookService.GetAsyncByAuthor(AuthorId);
+
+                var bookDtoList = bookList.Select(x => _bookConverter.Convert(x)).ToList();
+
+                return new ObjectResult(bookDtoList);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Something went wrong" + $"{ex.Message}");
+            }
+
+        }
 
         // GET api/Books/5
         [HttpGet("{id}")]
