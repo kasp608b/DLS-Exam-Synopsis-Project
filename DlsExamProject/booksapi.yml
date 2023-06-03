@@ -4,7 +4,7 @@ metadata:
   name: booksapi
   namespace: default
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: booksapi
@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: booksapi
-        image: scupak/booksapi:latest
+        image: scupak/booksapi:main-BooksApi
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
