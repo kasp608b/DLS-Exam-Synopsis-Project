@@ -38,7 +38,7 @@ namespace BooksApi.Controllers
         }
 
         // GET: api/Books/GetbooksByAuthor/{authorid}
-        [HttpGet("GetbooksByAuthor/{id}")]
+        [HttpGet("GetbooksByAuthor/{AuthorId}")]
         public async Task<ActionResult<List<BookDto>>> GetBooksByAuthor(string AuthorId)
         {
             try
