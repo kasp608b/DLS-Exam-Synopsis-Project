@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: authorsapi
-        image: scupak/authorsapi:3
+        image: scupak/authorsapi:latest
 ---
 apiVersion: v1
 kind: Service

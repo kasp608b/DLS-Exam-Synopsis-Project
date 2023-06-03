@@ -1,12 +1,12 @@
-﻿namespace WeebAPI.Models
+﻿namespace AuthorsApi.Models
 {
-    public class WeebDatabaseSettings
+    public class AuthorDatabaseSettings
     {
         public string ConnectionString { get; set; } = null!;
 
         public string DatabaseName { get; set; } = null!;
 
-        public string WeebCollectionName { get; set; } = null!;
+        public string AuthorCollectionName { get; set; } = null!;
 
     }
 }

@@ -1,13 +1,17 @@
-using WeebAPI.Models;
-using WeebAPI.Services;
+
+using AuthorsApi;
+using AuthorsApi.Models;
+using Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<WeebDatabaseSettings>(
-    builder.Configuration.GetSection("WeebDatabase"));
+builder.Services.Configure<AuthorDatabaseSettings>(
+    builder.Configuration.GetSection("AuthorDatabase"));
 
-builder.Services.AddSingleton<WeebDatabaseService>();
+builder.Services.AddSingleton<AuthorDatabaseService>();
+
+builder.Services.AddSingleton<IConverter<Author, AuthorDto>, AuthorConverter>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
