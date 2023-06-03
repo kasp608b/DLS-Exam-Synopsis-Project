@@ -2,7 +2,8 @@ name: Publish Docker images
 env:
   PROJECT_TO_REPO_MAP: |
     {
-      "AuthorsApi": "authorsapi"
+      "AuthorsApi": "authorsapi",
+      "BooksApi": "booksapi"
     }
 on:
    workflow_dispatch:
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: ['AuthorsApi']
+        project: ['AuthorsApi','BooksApi']
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
