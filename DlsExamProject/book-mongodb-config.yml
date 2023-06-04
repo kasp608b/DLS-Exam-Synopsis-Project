@@ -4,7 +4,12 @@ metadata:
   name: book-mongodb-config
 data:
   mongod.conf: |
-    dbPath: /data/books/db
-    logPath: /data/books/log
-    replication:
-      replSetName: my-replica-set
+    storage:  
+        dbPath: /data/books/db
+    systemLog:
+        destination: file
+        path: /data/books/log
+        verbosity: 2
+    net:
+      bindIp: 0.0.0.0
+      port: 27017

@@ -19,6 +19,8 @@ spec:
             - containerPort: 27018
           command:
             - "mongod"
+            - "--config"
+            - "/etc/mongod.conf" 
             - "--bind_ip"
             - "0.0.0.0"
             - "--port"
@@ -28,6 +30,7 @@ spec:
               mountPath: /data/books/db
             - name: book-mongodb-config
               mountPath: /etc/mongod.conf
+              subPath: mongod.conf
       volumes:
         - name: book-mongodb-storage
           persistentVolumeClaim:

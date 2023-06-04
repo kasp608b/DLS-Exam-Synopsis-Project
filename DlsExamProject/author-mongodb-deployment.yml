@@ -15,6 +15,15 @@ spec:
       containers:
         - name: author-mongodb
           image: mongo
+          command:
+            - "mongod"
+          args:
+              - "--config"
+              - "/etc/mongod.conf"
+              - "--bind_ip"
+              - "0.0.0.0"
+              - "--port"
+              - "27017"
           ports:
             - containerPort: 27017
           volumeMounts:
@@ -22,6 +31,7 @@ spec:
               mountPath: /data/authors/db
             - name: author-mongodb-config
               mountPath: /etc/mongod.conf
+              subPath: mongod.conf
       volumes:
         - name: author-mongodb-storage
           persistentVolumeClaim:

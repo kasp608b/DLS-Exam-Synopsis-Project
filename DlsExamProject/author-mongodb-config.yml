@@ -4,7 +4,13 @@ metadata:
   name: author-mongodb-config
 data:
   mongod.conf: |
-    dbPath: /data/authors/db
-    logPath: /data/authors/log
-    replication:
-      replSetName: my-replica-set
+    
+    storage:
+      dbPath: /data/authors/db
+    systemLog:
+      destination: file
+      path: /data/authors/log
+      verbosity: 2
+    net:
+      bindIp: 0.0.0.0
+      port: 27017
