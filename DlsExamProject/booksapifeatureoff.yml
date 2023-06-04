@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: booksapi
+  name: booksapifeatureoff
   namespace: default
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: booksapi
+      app: booksapifeatureoff
   template:
     metadata:
       labels:
-        app: booksapi
+        app: booksapifeatureoff
     spec:
       containers:
-      - name: booksapi
+      - name: booksapifeatureoff
         image: scupak/booksapi:main-BooksApi
         imagePullPolicy: Always
         env:
         - name: GREETING_FEATURE_FLAG
-          value: "true"
+          value: "false"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: booksapi
+  name: booksapifeatureoff
   namespace: default
 spec:
   type: NodePort
   selector:
-    app: booksapi
+    app: booksapifeatureoff
   ports:
   - port: 80
-    nodePort: 31003
+    nodePort: 31004
