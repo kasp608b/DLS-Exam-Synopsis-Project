@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes services", "Kube
 	ProjectSection(SolutionItems) = preProject
 		authorsapi.yml = authorsapi.yml
 		booksapi.yml = booksapi.yml
+		booksapifeatureoff.yml = booksapifeatureoff.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes authormongoDB", "Kubernetes authormongoDB", "{8535A66B-B3D1-4348-8313-5934EA6EC089}"
@@ -42,7 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes booksmongodb", "
 		book-mongodb-service.yml = book-mongodb-service.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{EC5638A7-78ED-44B8-9100-E8B1180D0C87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{EC5638A7-78ED-44B8-9100-E8B1180D0C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
