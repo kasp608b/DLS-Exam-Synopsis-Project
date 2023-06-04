@@ -4,7 +4,15 @@ using Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Console.WriteLine(Environment.GetEnvironmentVariable("GREETING_FEATURE_FLAG"));
+if (Environment.GetEnvironmentVariable("GREETING_FEATURE_FLAG") == "true")
+{
+    Console.WriteLine("Greeting feature flag is enabled");
+}
+else
+{
+    Console.WriteLine("Greeting feature flag is disabled");
+}
+
 string authorServiceBaseUrl = "http://authorsapi/api/Authors/";
 // Add services to the container.
 builder.Services.Configure<BookDatabaseSettings>(

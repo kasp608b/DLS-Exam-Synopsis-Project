@@ -20,6 +20,13 @@ spec:
         env:
         - name: GREETING_FEATURE_FLAG
           value: "true"
+          
+      - name: booksapiFeatureDisabled
+        image: scupak/booksapi:main-BooksApi
+        imagePullPolicy: Always
+        env:
+        - name: GREETING_FEATURE_FLAG
+          value: "false"
 ---
 apiVersion: v1
 kind: Service
