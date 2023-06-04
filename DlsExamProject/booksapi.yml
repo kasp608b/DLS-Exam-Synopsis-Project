@@ -17,6 +17,9 @@ spec:
       - name: booksapi
         image: scupak/booksapi:main-BooksApi
         imagePullPolicy: Always
+        env:
+        - name: GREETING_FEATURE_FLAG
+          value: "true"
 ---
 apiVersion: v1
 kind: Service

@@ -4,6 +4,7 @@ using Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
+Console.WriteLine(Environment.GetEnvironmentVariable("GREETING_FEATURE_FLAG"));
 string authorServiceBaseUrl = "http://authorsapi/api/Authors/";
 // Add services to the container.
 builder.Services.Configure<BookDatabaseSettings>(
