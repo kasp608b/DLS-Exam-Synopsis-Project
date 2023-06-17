@@ -73,7 +73,7 @@ namespace BooksApi.Controllers
 
                 var bookDto = _bookConverter.Convert(book);
 
-                if(bookDto.Authorid == null)
+                if (bookDto.Authorid == null)
                     return bookDto;
 
                 var bookAuthor = await _authorsServieGateway.Get(book.Authorid);
