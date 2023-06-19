@@ -23,7 +23,7 @@ builder.Services.AddSingleton<BookDatabaseService>();
 builder.Services.AddSingleton<IConverter<Book, BookDto>, BookConverter>();
 
 builder.Services.AddSingleton(new
-    AuthorsServieGateway(authorServiceBaseUrl));
+    AuthorsServiceGateway(authorServiceBaseUrl));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

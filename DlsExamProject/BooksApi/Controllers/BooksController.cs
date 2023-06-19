@@ -10,9 +10,9 @@ namespace BooksApi.Controllers
     {
         private readonly BookDatabaseService _bookService;
         private readonly IConverter<Book, BookDto> _bookConverter;
-        private readonly AuthorsServieGateway _authorsServieGateway;
+        private readonly AuthorsServiceGateway _authorsServieGateway;
 
-        public BooksController(BookDatabaseService bookService, IConverter<Book, BookDto> bookconverter, AuthorsServieGateway authorsServieGateway)
+        public BooksController(BookDatabaseService bookService, IConverter<Book, BookDto> bookconverter, AuthorsServiceGateway authorsServieGateway)
         {
             _bookService = bookService;
             _bookConverter = bookconverter;
@@ -73,7 +73,7 @@ namespace BooksApi.Controllers
 
                 var bookDto = _bookConverter.Convert(book);
 
-                if(bookDto.Authorid == null)
+                if (bookDto.Authorid == null)
                     return bookDto;
 
                 var bookAuthor = await _authorsServieGateway.Get(book.Authorid);

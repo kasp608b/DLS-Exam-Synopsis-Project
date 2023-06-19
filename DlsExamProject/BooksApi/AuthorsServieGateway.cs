@@ -3,11 +3,11 @@ using RestSharp;
 
 namespace BooksApi
 {
-    public class AuthorsServieGateway
+    public class AuthorsServiceGateway
     {
         string _AuthorServiceUrl;
 
-        public AuthorsServieGateway(string AuthorServiceUrl)
+        public AuthorsServiceGateway(string AuthorServiceUrl)
         {
             _AuthorServiceUrl = AuthorServiceUrl;
         }
